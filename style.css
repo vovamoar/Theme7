@@ -278,6 +278,13 @@ header.sticky {
 	color: var(--main-color);
 }
 
+.container-box .bx-time-five,
+.container-box .bx-map,
+.container-box .bx-phone {
+	font-size: 60px;
+	color: var(--main-color);
+}
+
 /* About Style */
 .about {
 	display: grid;
