@@ -123,11 +123,41 @@ section {
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
 	gap: 2rem;
+	padding-top: 80px;
+}
+
+.home-img {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: var(--bg-color);
+	outline: none;
+	box-shadow: 10px 10px 40px rgba(255, 165, 0, 0.7);
 }
 
 .home-img img {
 	width: 100%;
 	height: auto;
+	display: block;
+}
+
+@keyframes directionalGlow {
+	0% {
+		box-shadow: 10px 10px 40px rgba(255, 165, 0, 0.7);
+	}
+	50% {
+		box-shadow: 12px 12px 45px rgba(255, 165, 0, 0.9);
+	}
+	100% {
+		box-shadow: 10px 10px 40px rgba(255, 165, 0, 0.7);
+	}
+}
+
+.home-img {
+	animation: directionalGlow 3s ease-in-out infinite;
 }
 
 .home-text h1 {

@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			setTimeout(() => {
 				cookiesPopup.classList.add('active')
 				showOverlay()
-			}, 2000)
+			}, 1000)
 		}
 	})
 
