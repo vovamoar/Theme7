@@ -76,7 +76,7 @@ sr.reveal('.container-box, .box', {
 })
 
 sr.reveal('.about-img', {
-	delay: 200,
+	delay: 300,
 	origin: 'left',
 	distance: '30px',
 	duration: 2000,
@@ -84,7 +84,7 @@ sr.reveal('.about-img', {
 })
 
 sr.reveal('.about-text', {
-	delay: 250,
+	delay: 350,
 	origin: 'right',
 	distance: '30px',
 	viewFactor: 0.4,
@@ -321,5 +321,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		alert('Cookie settings will be available soon!')
 	})
 })
-
-

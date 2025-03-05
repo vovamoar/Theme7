@@ -427,14 +427,58 @@ section {
 
 /* review-content style */
 .review-content {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-	gap: 2rem;
-	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
 	margin-top: 4rem;
+	overflow: hidden;
+	position: relative;
+	padding: 2rem 0;
+}
+
+.review-row {
+	display: flex;
+	gap: 2rem;
+	animation-duration: 14s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	width: max-content;
+	position: relative;
+}
+
+.review-row:hover {
+	animation-play-state: paused;
+}
+
+.review-row-right {
+	animation-name: scrollRight;
+}
+
+.review-row-left {
+	animation-name: scrollLeft;
+}
+
+@keyframes scrollRight {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-50% - 1rem));
+	}
+}
+
+@keyframes scrollLeft {
+	0% {
+		transform: translateX(calc(-50% - 1rem));
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
 .box {
+	flex: 0 0 auto;
+	width: 500px;
 	padding: 35px;
 	background: var(--other-color);
 	border-radius: 3rem;
@@ -1095,6 +1139,11 @@ textarea.form-input {
 
 	section {
 		padding: 50px 4% 40px;
+		transition: 0.2s;
+	}
+
+	section.review {
+		padding: 50px 2% 40px;
 		transition: 0.2s;
 	}
 
