@@ -6,6 +6,10 @@ let navlist = document.querySelector('.navlist')
 const navListItems = document.querySelectorAll('.navlist_item')
 
 window.addEventListener('scroll', () => {
+	// Обработка sticky header
+	header.classList.toggle('sticky', window.scrollY > 80)
+
+	// Обработка кнопки прокрутки вверх
 	if (window.scrollY > 300) {
 		scrollTopBtn.classList.add('show')
 	} else {
@@ -18,10 +22,6 @@ scrollTopBtn.addEventListener('click', () => {
 		top: 0,
 		behavior: 'smooth',
 	})
-})
-
-window.addEventListener('scroll', function () {
-	header.classList.toggle('sticky', window.scrollY > 80)
 })
 
 faqItems.forEach(item => {
@@ -321,3 +321,5 @@ document.addEventListener('DOMContentLoaded', () => {
 		alert('Cookie settings will be available soon!')
 	})
 })
+
+
