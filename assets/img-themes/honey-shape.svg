@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 400">
+    <defs>
+        <pattern id="imgpattern" x="0" y="0" width="1" height="1">
+            <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="home.png"/>
+        </pattern>
+    </defs>
+    <path fill="url(#imgpattern)" d="M250,50
+        C360,50 420,100 430,180
+        C440,260 390,320 355,330
+        C390,340 405,350 405,360
+        C405,370 390,380 345,375
+        C300,370 180,370 130,350
+        C80,330 50,260 60,180
+        C70,100 140,50 250,50Z"/>
+    <path fill="none" stroke="#FF9F0D" stroke-width="8" d="M250,50
+        C360,50 420,100 430,180
+        C440,260 390,320 355,330
+        C390,340 405,350 405,360
+        C405,370 390,380 345,375
+        C300,370 180,370 130,350
+        C80,330 50,260 60,180
+        C70,100 140,50 250,50Z"/>
+</svg>

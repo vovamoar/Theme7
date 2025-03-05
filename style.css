@@ -140,35 +140,29 @@ section {
 .home-img {
 	position: relative;
 	width: 100%;
-	max-width: 600px;
+	max-width: 4000px;
 	margin: 0 auto;
-	border-radius: 50%;
 	overflow: hidden;
-	background-color: var(--bg-color);
-	outline: none;
-	box-shadow: 10px 10px 40px rgba(255, 165, 0, 0.7);
 }
 
-.home-img img {
+.home-img svg {
 	width: 100%;
 	height: auto;
-	display: block;
+	filter: drop-shadow(15px 15px 0px rgba(255, 165, 0, 0.8))
+		drop-shadow(10px 10px 15px rgba(255, 165, 0, 0.6));
+	animation: pulse 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes directionalGlow {
+@keyframes pulse {
 	0% {
-		box-shadow: 10px 10px 40px rgba(255, 165, 0, 0.7);
+		transform: scale(1);
 	}
 	50% {
-		box-shadow: 12px 12px 45px rgba(255, 165, 0, 0.9);
+		transform: scale(1.02);
 	}
 	100% {
-		box-shadow: 10px 10px 40px rgba(255, 165, 0, 0.7);
+		transform: scale(1);
 	}
-}
-
-.home-img {
-	animation: directionalGlow 3s ease-in-out infinite;
 }
 
 .home-text h1 {
@@ -1567,8 +1561,8 @@ textarea.form-input {
 }
 
 .accept-btn:hover {
-	box-shadow: var(--box-shadow-main);
 	transform: translateY(-2px);
+	box-shadow: var(--box-shadow-main);
 }
 
 .decline-btn {
@@ -1580,8 +1574,8 @@ textarea.form-input {
 }
 
 .decline-btn:hover {
-	box-shadow: var(--box-shadow-main);
 	transform: translateY(-2px);
+	box-shadow: var(--box-shadow-main);
 }
 
 .settings-btn {
