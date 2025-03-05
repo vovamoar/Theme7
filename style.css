@@ -146,7 +146,7 @@ section {
 	display: flex;
 	align-items: center;
 	margin-top: -50px;
-	padding: 0 0 0 90px;
+	padding: 0 0 0 120px;
 	gap: 50px;
 }
 
@@ -405,7 +405,7 @@ section {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
-	padding-top:60px;
+	padding-top: 60px;
 	gap: 4rem;
 }
 
@@ -540,48 +540,28 @@ section {
 	flex-direction: column;
 	gap: 3rem;
 	margin-top: 4rem;
-	overflow: hidden;
 	position: relative;
 	padding: 2rem 0;
+	overflow: hidden;
 }
 
 .review-row {
 	display: flex;
 	gap: 2rem;
-	animation-duration: 14s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	width: max-content;
-	position: relative;
-}
-
-.review-row:hover {
-	animation-play-state: paused;
-}
-
-.review-row-right {
-	animation-name: scrollRight;
+	width: calc(500px * 6);
+	animation: scroll 35s linear infinite;
 }
 
 .review-row-left {
-	animation-name: scrollLeft;
+	animation-direction: reverse;
 }
 
-@keyframes scrollRight {
-	0% {
+@keyframes scroll {
+	from {
 		transform: translateX(0);
 	}
-	100% {
-		transform: translateX(calc(-50% - 1rem));
-	}
-}
-
-@keyframes scrollLeft {
-	0% {
-		transform: translateX(calc(-50% - 1rem));
-	}
-	100% {
-		transform: translateX(0);
+	to {
+		transform: translateX(calc(-500px * 3));
 	}
 }
 
@@ -596,6 +576,7 @@ section {
 }
 
 .box:hover {
+	animation-play-state: paused;
 	border: 2px solid var(--main-color);
 	box-shadow: #ff9f0d 0px 1px 25px;
 }
