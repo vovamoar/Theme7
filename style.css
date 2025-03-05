@@ -536,11 +536,11 @@ section {
 
 /* review-content style */
 .review-content {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
 	margin-top: 4rem;
-	position: relative;
 	padding: 2rem 0;
 	overflow: hidden;
 }
@@ -549,7 +549,7 @@ section {
 	display: flex;
 	gap: 2rem;
 	width: calc(500px * 6);
-	animation: scroll 35s linear infinite;
+	animation: scroll 22s linear infinite;
 }
 
 .review-row-left {
@@ -565,7 +565,51 @@ section {
 	}
 }
 
-.box {
+.review-row2 {
+	position: absolute;
+	top: 32px;
+	left: 1596px;
+	display: flex;
+	gap: 2rem;
+	width: calc(500px * 6);
+	animation: scroll2 22s linear infinite;
+}
+
+@keyframes scroll2 {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-500px * 3));
+	}
+}
+
+.review-row3 {
+	position: absolute;
+	top: 352px;
+	left: 1596px;
+	display: flex;
+	gap: 2rem;
+	width: calc(500px * 6);
+	animation: scroll3 22s linear infinite;
+}
+
+.review-row-left2 {
+	animation-direction: reverse;
+}
+
+@keyframes scroll3 {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-500px * 3));
+	}
+}
+
+.box,
+.box2,
+.box3 {
 	flex: 0 0 auto;
 	width: 500px;
 	padding: 35px;
@@ -575,20 +619,25 @@ section {
 	transition: box-shadow 0.5s ease, border 0.5s ease;
 }
 
-.box:hover {
+.box:hover,
+.box2:hover,
+.box3:hover {
 	animation-play-state: paused;
 	border: 2px solid var(--main-color);
 	box-shadow: #ff9f0d 0px 1px 25px;
 }
 
-.box p {
+.box p,
+.box2 p,
+.box3 p {
 	color: var(--second-color);
 	font-size: var(--p-font);
 	line-height: 30px;
 	margin-bottom: 1.5rem;
 }
 
-.in-box {
+.in-box,
+.in-box2 {
 	display: flex;
 	align-items: center;
 	gap: 30px;
@@ -1798,7 +1847,7 @@ textarea.form-input {
 	}
 
 	section.review {
-		padding: 50px 2% 40px;
+		padding: 50px 0% 40px;
 		transition: 0.2s;
 	}
 
