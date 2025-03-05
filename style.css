@@ -1376,6 +1376,12 @@ textarea.form-input {
 	}
 }
 
+@media screen and (max-width: 420px) {
+	.card-back h3 {
+		display: none;
+	}
+}
+
 /* Footer Section */
 .footer {
 	background: var(--other-color);
