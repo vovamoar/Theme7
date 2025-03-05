@@ -987,6 +987,7 @@ textarea.form-input {
 
 	.contact-form {
 		padding: 2rem;
+		width: 100%;
 	}
 
 	.app-download {
@@ -1964,6 +1965,10 @@ textarea.form-input {
 }
 
 @media (max-width: 520px) {
+	.review {
+		display: none;
+	}
+
 	section.review {
 		padding: 0 0% 40px;
 	}
