@@ -290,34 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	`
 	document.body.appendChild(cookiesPopup)
 
-	// Create welcome popup
-	const welcomePopup = document.createElement('div')
-	welcomePopup.className = 'welcome-popup'
-	welcomePopup.id = 'welcomePopup'
-	welcomePopup.innerHTML = `
-		<div class="welcome-content">
-			<i class="bx bx-party"></i>
-			<h2>Welcome to our Food Website!</h2>
-			<p>Discover amazing recipes and delicious food. Get special offers on your first order!</p>
-			<div class="welcome-features">
-				<div class="feature">
-					<i class="bx bx-dish"></i>
-					<span>Fresh Food</span>
-				</div>
-				<div class="feature">
-					<i class="bx bx-time-five"></i>
-					<span>Fast Delivery</span>
-				</div>
-				<div class="feature">
-					<i class="bx bx-gift"></i>
-					<span>Special Offers</span>
-				</div>
-			</div>
-			<button class="welcome-btn">Get Started</button>
-		</div>
-	`
-	document.body.appendChild(welcomePopup)
-
 	// Function to show overlay
 	const showOverlay = () => {
 		overlay.classList.add('active')
@@ -330,38 +302,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.body.style.overflow = '' // Enable scrolling
 	}
 
-	// Show welcome popup if it's the first visit
-	if (!localStorage.getItem('welcomeShown')) {
-		setTimeout(() => {
-			welcomePopup.classList.add('active')
-			showOverlay()
-		}, 1500)
-	}
-
 	// Show cookies popup if consent not given
 	if (!localStorage.getItem('cookiesAccepted')) {
 		setTimeout(() => {
-			if (!welcomePopup.classList.contains('active')) {
-				cookiesPopup.classList.add('active')
-				showOverlay()
-			}
+			cookiesPopup.classList.add('active')
+			showOverlay()
 		}, 3000)
 	}
-
-	// Welcome popup button
-	welcomePopup.querySelector('.welcome-btn').addEventListener('click', () => {
-		welcomePopup.classList.remove('active')
-		hideOverlay()
-		localStorage.setItem('welcomeShown', 'true')
-
-		// Show cookies popup after welcome popup is closed
-		if (!localStorage.getItem('cookiesAccepted')) {
-			setTimeout(() => {
-				cookiesPopup.classList.add('active')
-				showOverlay()
-			}, 1000)
-		}
-	})
 
 	// Cookies popup buttons
 	cookiesPopup.querySelector('.accept-btn').addEventListener('click', () => {
