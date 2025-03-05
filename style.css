@@ -166,7 +166,8 @@ section {
 	margin-bottom: 3rem;
 }
 
-.home-img {
+.home-img,
+.about-img {
 	flex: 1.8;
 	display: flex;
 	justify-content: center;
@@ -174,7 +175,8 @@ section {
 	margin-right: -50px;
 }
 
-.home-img svg {
+.home-img svg,
+.about-img svg {
 	width: 100%;
 	max-width: 1200px;
 	height: auto;
@@ -349,7 +351,7 @@ section {
 
 /* Container style */
 .container {
-	margin-top: -140px;
+	margin-top: -110px;
 	padding: 30px 6% 70px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
@@ -405,8 +407,8 @@ section {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
-	padding-top: 60px;
-	gap: 4rem;
+	margin-top: -50px;
+	gap: 5rem;
 }
 
 .about-img img {
@@ -1849,6 +1851,9 @@ textarea.form-input {
 	section.review {
 		padding: 50px 0% 40px;
 		transition: 0.2s;
+	}
+	section.shop {
+		padding-top: 0;
 	}
 
 	.container {
