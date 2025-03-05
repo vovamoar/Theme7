@@ -569,7 +569,8 @@ section {
 }
 
 .store-btn img {
-	height: 40px;
+	width: 200px;
+	height: 60px;
 	transition: transform 0.3s ease;
 }
 
@@ -581,6 +582,14 @@ section {
 	display: flex;
 	gap: 1.5rem;
 	margin: 2.5rem 0;
+}
+
+.social .bxl-facebook,
+.social .bxl-youtube,
+.social .bxl-twitter,
+.social .bxl-github,
+.social .bxl-instagram-alt {
+	font-size: 34px;
 }
 
 .social a {
@@ -613,12 +622,19 @@ section {
 	margin-bottom: 1.5rem;
 }
 
+.main-d .bxs-location-plus,
+.main-d .bx-mobile-alt,
+.main-d .bxl-youtube,
+.main-d .bx-bell {
+	font-size: 28px;
+}
+
 .main-d a {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
 	color: var(--text-color);
-	font-size: 1.1rem;
+	font-size: 18px;
 	transition: all 0.3s ease;
 }
 
@@ -832,7 +848,8 @@ textarea.form-input {
 	}
 
 	.store-btn img {
-		height: 35px;
+		width: 160px;
+		height: 60px;
 	}
 
 	.social {
@@ -1826,280 +1843,305 @@ textarea.form-input {
 
 /* Counter Section Styles */
 .counter {
-    padding: 80px 5% 80px;
-    background: var(--bg-color);
+	padding: 80px 5% 80px;
+	background: var(--bg-color);
 }
 
 .counter-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin-top: 4rem;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+	margin-top: 4rem;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .counter-item {
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
+	text-align: center;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.6s ease;
 }
 
 .counter-item.visible {
-    opacity: 1;
-    transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .counter-circle {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: var(--other-color);
-    margin: 0 auto 1.5rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    transition: all 0.4s ease;
-    border: 2px solid transparent;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	background: var(--other-color);
+	margin: 0 auto 1.5rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	transition: all 0.4s ease;
+	border: 2px solid transparent;
 }
 
 .counter-circle:hover {
-    border-color: var(--main-color);
-    box-shadow: 0 0 30px rgba(255, 159, 13, 0.3);
-    transform: translateY(-5px);
+	border-color: var(--main-color);
+	box-shadow: 0 0 30px rgba(255, 159, 13, 0.3);
+	transform: translateY(-5px);
 }
 
 .counter-circle i {
-    font-size: 3.5rem;
-    color: var(--main-color);
-    margin-bottom: 1rem;
+	font-size: 3.5rem;
+	color: var(--main-color);
+	margin-bottom: 1rem;
 }
 
 .counter-value {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--text-color);
-    display: inline-block;
+	font-size: 3.5rem;
+	font-weight: 700;
+	color: var(--text-color);
+	display: inline-block;
 }
 
 .counter-plus {
-    font-size: 2.5rem;
-    color: var(--main-color);
-    display: inline-block;
-    margin-left: 5px;
+	font-size: 2.5rem;
+	color: var(--main-color);
+	display: inline-block;
+	margin-left: 5px;
 }
 
 .counter-item h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-    margin-top: 1rem;
+	font-size: 1.5rem;
+	color: var(--text-color);
+	margin-top: 1rem;
 }
 
 @media screen and (max-width: 1400px) {
-    .counter-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .counter-circle {
-        width: 220px;
-        height: 220px;
-    }
-    .counter-value {
-        font-size: 3rem;
-    }
+	.counter-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.counter-circle {
+		width: 220px;
+		height: 220px;
+	}
+	.counter-value {
+		font-size: 3rem;
+	}
 }
 
 @media screen and (max-width: 768px) {
-    .counter {
-        padding: 60px 4% 60px;
-    }
-    .counter-container {
-        gap: 2rem;
-    }
-    .counter-circle {
-        width: 200px;
-        height: 200px;
-    }
-    .counter-value {
-        font-size: 2.8rem;
-    }
-    .counter-circle i {
-        font-size: 3rem;
-    }
+	.counter {
+		padding: 60px 4% 60px;
+	}
+	.counter-container {
+		gap: 2rem;
+	}
+	.counter-circle {
+		width: 200px;
+		height: 200px;
+	}
+	.counter-value {
+		font-size: 2.8rem;
+	}
+	.counter-circle i {
+		font-size: 3rem;
+	}
 }
 
 @media screen and (max-width: 480px) {
-    .counter-container {
-        grid-template-columns: 1fr;
-    }
-    .counter-circle {
-        width: 180px;
-        height: 180px;
-    }
-    .counter-value {
-        font-size: 2.5rem;
-    }
+	.counter-container {
+		grid-template-columns: 1fr;
+	}
+	.counter-circle {
+		width: 180px;
+		height: 180px;
+	}
+	.counter-value {
+		font-size: 2.5rem;
+	}
 }
 
 /* Process Section Styles */
 .process {
-    padding: 110px 16% 90px;
-    background: var(--bg-color);
+	padding: 110px 16% 90px;
+	background: var(--bg-color);
 }
 
 .process-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    margin-top: 4rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	margin-top: 4rem;
 }
 
 .process-item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: all 0.6s ease;
 }
 
 .process-item.visible {
-    opacity: 1;
-    transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .honeycomb {
-    position: relative;
-    width: 100px;
-    height: 115px;
-    background: var(--other-color);
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
+	position: relative;
+	width: 100px;
+	height: 115px;
+	background: var(--other-color);
+	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.4s ease;
 }
 
 .comb-cell {
-    position: relative;
-    z-index: 2;
-    color: var(--main-color);
-    font-size: 2rem;
+	position: relative;
+	z-index: 2;
+	color: var(--main-color);
+	font-size: 2rem;
 }
 
 .comb-fill {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background: var(--main-color);
-    transition: height 1s ease;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	background: var(--main-color);
+	transition: height 1s ease;
+	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
 .process-item.visible .comb-fill {
-    height: 100%;
+	height: 100%;
 }
 
 .process-content {
-    flex: 1;
+	flex: 1;
 }
 
 .process-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+	color: var(--text-color);
 }
 
 .process-content p {
-    color: var(--other-text-color);
-    line-height: 1.7;
+	color: var(--other-text-color);
+	line-height: 1.7;
 }
 
 /* Animated Bees */
 .bee {
-    position: absolute;
-    width: 20px;
-    height: 20px;
+	position: absolute;
+	width: 20px;
+	height: 20px;
 }
 
 .bee-body {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: var(--main-color);
-    border-radius: 50%;
-    box-shadow: -15px 0 rgba(0,0,0,0.1);
-    animation: fly 8s infinite;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: var(--main-color);
+	border-radius: 50%;
+	box-shadow: -15px 0 rgba(0, 0, 0, 0.1);
+	animation: fly 8s infinite;
 }
 
 .bee-1 {
-    top: 20%;
-    left: -10%;
-    animation: moveAround1 20s infinite;
+	top: 20%;
+	left: -10%;
+	animation: moveAround1 20s infinite;
 }
 
 .bee-2 {
-    top: 50%;
-    right: -10%;
-    animation: moveAround2 25s infinite;
+	top: 50%;
+	right: -10%;
+	animation: moveAround2 25s infinite;
 }
 
 .bee-3 {
-    bottom: 30%;
-    left: 50%;
-    animation: moveAround3 15s infinite;
+	bottom: 30%;
+	left: 50%;
+	animation: moveAround3 15s infinite;
 }
 
 @keyframes fly {
-    0%, 100% {
-        transform: translateY(-5px) rotate(-10deg);
-    }
-    50% {
-        transform: translateY(5px) rotate(10deg);
-    }
+	0%,
+	100% {
+		transform: translateY(-5px) rotate(-10deg);
+	}
+	50% {
+		transform: translateY(5px) rotate(10deg);
+	}
 }
 
 @keyframes moveAround1 {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(200px, 50px); }
-    50% { transform: translate(400px, -50px); }
-    75% { transform: translate(200px, 100px); }
-    100% { transform: translate(0, 0); }
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(200px, 50px);
+	}
+	50% {
+		transform: translate(400px, -50px);
+	}
+	75% {
+		transform: translate(200px, 100px);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
 }
 
 @keyframes moveAround2 {
-    0% { transform: translate(0, 0); }
-    33% { transform: translate(-300px, -100px); }
-    66% { transform: translate(-150px, 100px); }
-    100% { transform: translate(0, 0); }
+	0% {
+		transform: translate(0, 0);
+	}
+	33% {
+		transform: translate(-300px, -100px);
+	}
+	66% {
+		transform: translate(-150px, 100px);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
 }
 
 @keyframes moveAround3 {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(-200px, -100px); }
-    100% { transform: translate(0, 0); }
+	0% {
+		transform: translate(0, 0);
+	}
+	50% {
+		transform: translate(-200px, -100px);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
 }
 
 /* Media Queries */
 @media screen and (max-width: 1200px) {
-    .process-container {
-        gap: 3rem;
-    }
+	.process-container {
+		gap: 3rem;
+	}
 }
 
 @media screen and (max-width: 768px) {
-    .process-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .bee {
-        display: none;
-    }
+	.process-item {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.bee {
+		display: none;
+	}
 }
