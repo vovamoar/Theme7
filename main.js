@@ -151,6 +151,67 @@ sr.reveal('.benefit-card', {
 	viewFactor: 0.5,
 })
 
+// Process section animation
+const processItems = document.querySelectorAll('.process-item')
+
+const observerProcess = new IntersectionObserver(
+	entries => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible')
+			}
+		})
+	},
+	{
+		threshold: 0.5,
+	}
+)
+
+processItems.forEach(item => {
+	observerProcess.observe(item)
+})
+
+// Counter animation
+const counterItems = document.querySelectorAll('.counter-item')
+const counterValues = document.querySelectorAll('.counter-value')
+
+const startCounting = entries => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('visible')
+
+			const counter = entry.target.querySelector('.counter-value')
+			const target = +counter.dataset.target
+			const duration = 2500
+			const increment = target / (duration / 16)
+			let current = 0
+
+			const updateCounter = () => {
+				current += increment
+				if (current < target) {
+					counter.textContent = Math.floor(current)
+					requestAnimationFrame(updateCounter)
+				} else {
+					counter.textContent = target
+				}
+			}
+
+			updateCounter()
+			// Прекращаем наблюдение после начала анимации
+			counterObserver.unobserve(entry.target)
+		}
+	})
+}
+
+const counterObserver = new IntersectionObserver(startCounting, {
+	threshold: 0.3,
+	rootMargin: '0px',
+})
+
+counterItems.forEach(item => {
+	counterObserver.observe(item)
+})
+
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm')
 const formStatus = document.querySelector('.form-status')
