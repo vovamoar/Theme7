@@ -409,11 +409,10 @@ section {
 }
 
 /* About Style */
-.about {
+.about-content {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
-	margin-top: -50px;
 	gap: 5rem;
 }
 
@@ -441,7 +440,7 @@ section {
 }
 
 .middle-text h4 {
-	font-size: 24px;
+	font-size: 26px;
 	font-weight: 700;
 	margin-bottom: 10px;
 	color: var(--main-color);
@@ -1953,7 +1952,7 @@ textarea.form-input {
 		text-align: center;
 	}
 
-	.about {
+	.about-content {
 		grid-template-columns: 1fr;
 		gap: 22px;
 		padding-top: 0;
