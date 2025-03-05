@@ -215,7 +215,7 @@ section {
 }
 
 .typing-container {
-	height: 200px; /* Фиксированная высота для двух строк */
+	height: 200px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -242,7 +242,7 @@ section {
 }
 
 .typing-text-second {
-	color: var(--text-color); /* Другой цвет для второй строки */
+	color: var(--text-color);
 }
 
 @keyframes blink {
@@ -262,7 +262,13 @@ section {
 	opacity: 0.9;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1280px) {
+	.home-img {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
 	.home-text h1 {
 		margin-bottom: 2rem;
 		font-size: 3.5rem;
@@ -1357,6 +1363,10 @@ textarea.form-input {
 }
 
 @media screen and (max-width: 768px) {
+	.benefits {
+		padding-top: 0;
+	}
+
 	.benefits-content {
 		grid-template-columns: 1fr;
 	}
@@ -1873,11 +1883,7 @@ textarea.form-input {
 	}
 }
 
-@media (max-width: 1060px) {
-	#menu-icon {
-		display: initial;
-	}
-
+@media (max-width: 1340px) {
 	.navlist {
 		position: absolute;
 		top: -1000px;
@@ -1889,6 +1895,12 @@ textarea.form-input {
 		gap: 0;
 		background: var(--other-color);
 		transition: all 0.5s ease;
+	}
+}
+
+@media (max-width: 1060px) {
+	#menu-icon {
+		display: initial;
 	}
 
 	.navlist a {
@@ -1952,6 +1964,10 @@ textarea.form-input {
 }
 
 @media (max-width: 520px) {
+	section.review {
+		padding: 0 0% 40px;
+	}
+
 	.contact-img {
 		gap: 1.5rem;
 	}
@@ -2079,7 +2095,7 @@ textarea.form-input {
 
 @media screen and (max-width: 768px) {
 	.counter {
-		padding: 60px 4% 60px;
+		padding: 0 4% 60px;
 	}
 	.counter-container {
 		gap: 2rem;
@@ -2316,6 +2332,10 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
+	.home {
+		padding-left: 50px;
+	}
+
 	.home-text h1 {
 		font-size: 3.5rem;
 		height: 240px;
@@ -2356,5 +2376,14 @@ textarea.form-input {
 	.typing-text-second {
 		font-size: 2.4rem;
 		height: 60px;
+	}
+
+	.app-download {
+		align-items: center;
+	}
+
+	.social {
+		align-items: center;
+		justify-content: center;
 	}
 }
