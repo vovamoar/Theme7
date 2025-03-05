@@ -382,3 +382,60 @@ document.addEventListener('DOMContentLoaded', () => {
 		alert('Cookie settings will be available soon!')
 	})
 })
+
+// Typing Animation
+const typingText = document.querySelector('.typing-text')
+const phrases = [
+	'Premium Honey\nCollection',
+	'Natural Golden\nTreasure',
+	'Pure Organic\nSweetness',
+	'Finest Quality\nSelection',
+]
+
+let phraseIndex = 0
+let charIndex = 0
+let isDeleting = false
+let isWaiting = false
+
+function type() {
+	const currentPhrase = phrases[phraseIndex]
+	const speed = isDeleting ? 40 : 80
+
+	if (!isDeleting && charIndex < currentPhrase.length) {
+		// Печатаем символ
+		typingText.textContent = currentPhrase.substring(0, charIndex + 1)
+		charIndex++
+	} else if (isDeleting && charIndex > 0) {
+		// Удаляем символ
+		typingText.textContent = currentPhrase.substring(0, charIndex - 1)
+		charIndex--
+	} else if (charIndex === 0 && isDeleting) {
+		// Переходим к следующей фразе
+		isDeleting = false
+		phraseIndex = (phraseIndex + 1) % phrases.length
+	} else if (charIndex === currentPhrase.length && !isDeleting && !isWaiting) {
+		// Ждем перед удалением
+		isWaiting = true
+		setTimeout(() => {
+			isDeleting = true
+			isWaiting = false
+			type()
+		}, 2500)
+		return
+	}
+
+	// Продолжаем анимацию с динамической скоростью
+	const nextSpeed = isDeleting
+		? speed
+		: charIndex === currentPhrase.length
+		? speed * 4
+		: speed
+
+	setTimeout(type, nextSpeed)
+}
+
+// Запускаем анимацию когда документ загружен
+document.addEventListener('DOMContentLoaded', () => {
+	typingText.textContent = ''
+	setTimeout(type, 1000)
+})
