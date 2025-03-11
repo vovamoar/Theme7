@@ -500,6 +500,7 @@
 			</div>
 		</section>
 
+		<!-- Review Section -->
 		<section class="review" id="review">
 			<div class="middle-text review-space">
 				<h4>Our Customer</h4>
@@ -1176,5 +1177,74 @@
 		<!-- Js file link -->
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script src="main.js"></script>
+		<script>
+			function randomColor() {
+				const colors = [
+					'#4e69ff',
+					'#a47864',
+					'rgb(233, 0, 233)',
+					'rgb(0, 233, 0)',
+					'rgb(238, 238, 0)',
+					'rgb(255, 47, 47)',
+				]
+
+				const randomIndex = Math.floor(Math.random() * colors.length)
+				const selectedColor = colors[randomIndex]
+
+				// Function to convert any color format to RGBA
+				function convertToRGBA(color, alpha) {
+					// Create a temporary element to use the browser's color parsing
+					const tempElement = document.createElement('div')
+					tempElement.style.color = color
+					document.body.appendChild(tempElement)
+
+					// Get computed style (in rgb format)
+					const computedColor = window.getComputedStyle(tempElement).color
+					document.body.removeChild(tempElement)
+
+					// Extract RGB values
+					const rgbMatch = computedColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/)
+					if (rgbMatch) {
+						const r = rgbMatch[1]
+						const g = rgbMatch[2]
+						const b = rgbMatch[3]
+						return `rgba(${r}, ${g}, ${b}, ${alpha})`
+					}
+
+					return color // Fallback to original color if conversion fails
+				}
+
+				// Set the main color variable
+				document.documentElement.style.setProperty(
+					'--main-color',
+					selectedColor
+				)
+
+				// Set transparent versions of the main color for shadows
+				document.documentElement.style.setProperty(
+					'--main-color-transparent',
+					convertToRGBA(selectedColor, 0.8)
+				)
+
+				document.documentElement.style.setProperty(
+					'--main-color-transparent-light',
+					convertToRGBA(selectedColor, 0.6)
+				)
+
+				document.documentElement.style.setProperty(
+					'--main-color-transparent-medium',
+					convertToRGBA(selectedColor, 0.4)
+				)
+
+				document.documentElement.style.setProperty(
+					'--main-color-transparent-dark',
+					convertToRGBA(selectedColor, 0.2)
+				)
+
+				console.log('Applied random color: ' + selectedColor)
+			}
+
+			window.addEventListener('DOMContentLoaded', randomColor)
+		</script>
 	</body>
 </html>
