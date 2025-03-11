@@ -1171,12 +1171,11 @@
 			</div>
 		</footer>
 
-		<!-- scroll-top -->
 		<a href="#" class="scroll"><i class="bx bx-up-arrow-alt"></i></a>
 
-		<!-- Js file link -->
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script src="main.js"></script>
+
 		<script>
 			function randomColor() {
 				const colors = [
@@ -1186,10 +1185,27 @@
 					'rgb(0, 233, 0)',
 					'rgb(238, 238, 0)',
 					'rgb(255, 47, 47)',
+					'#ff69b4',
+					'#33cc33',
+					'#ffd700',
+					'#00cccc',
+					'#cc00cc',
 				]
 
-				const randomIndex = Math.floor(Math.random() * colors.length)
-				const selectedColor = colors[randomIndex]
+				// Get the previously used color from localStorage
+				const previousColor = localStorage.getItem('previousColor')
+
+				// Choose a random color that's different from the previous one
+				let selectedColor
+				let randomIndex
+
+				do {
+					randomIndex = Math.floor(Math.random() * colors.length)
+					selectedColor = colors[randomIndex]
+				} while (selectedColor === previousColor && colors.length > 1)
+
+				// Save the current color for next time
+				localStorage.setItem('previousColor', selectedColor)
 
 				// Function to convert any color format to RGBA
 				function convertToRGBA(color, alpha) {
