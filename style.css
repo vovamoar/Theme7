@@ -1882,6 +1882,10 @@ textarea.form-input {
 		padding-top: 0;
 	}
 
+	.cookies-section {
+		padding: 0;
+	}
+
 	.container {
 		padding: 60px 4% 50px;
 	}

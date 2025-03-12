@@ -6,7 +6,6 @@
 		<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="style.css" />
 		<title>Theme7 Food Website</title>
-		<!-- Box icon link -->
 		<link
 			rel="stylesheet"
 			href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
@@ -16,7 +15,6 @@
 		<!-- Header section -->
 		<header>
 			<a href="#" class="logo"><i class="bx bxs-home"></i>Honey</a>
-			<!-- Navbar -->
 			<ul class="navlist">
 				<li class="navlist_item">
 					<a class="navlist_link active" href="#home">Home</a>
@@ -1109,6 +1107,24 @@
 			</div>
 		</section>
 
+		<!-- Cookies Consent -->
+		<section class="cookies-section">
+			<div class="cookies-popup" id="cookiesPopup">
+				<div class="cookies-content">
+					<i class="bx bx-cookie"></i>
+					<div class="cookies-text">
+						<h3>Cookies Consent</h3>
+						<p>We use cookies to enhance your experience on our website. They help us analyze website usage and improve its functionality.</p>
+					</div>
+					<div class="cookies-buttons">
+						<button class="accept-btn">Accept All</button>
+						<button class="decline-btn">Decline All</button>
+						<button class="settings-btn">Settings</button>
+					</div>
+				</div>
+		</section>
+
+		<!-- Footer -->
 		<footer class="footer">
 			<div class="footer-content">
 				<div class="footer-col">
@@ -1178,6 +1194,7 @@
 		<script src="main.js"></script>
 
 		<script>
+			//! Random Color Generator
 			function getRandomColor() {
 				const colors = [
 					'#4e69ff',
@@ -1250,6 +1267,36 @@
 
 				console.log('Applied random color: ' + selectedColor)
 			}
+
+			//! Cookies popup
+			const cookiesPopup = document.getElementById('cookiesPopup');
+
+			if (!localStorage.getItem('cookiesAccepted')) {
+				console.log('Cookies popup not shown')
+				setTimeout(() => {
+					cookiesPopup.classList.add('active')
+				}, 3000)
+			}
+
+			cookiesPopup
+				.querySelector('.accept-btn')
+				.addEventListener('click', () => {
+					cookiesPopup.classList.remove('active')
+					localStorage.setItem('cookiesAccepted', 'true')
+				})
+
+			cookiesPopup
+				.querySelector('.decline-btn')
+				.addEventListener('click', () => {
+					cookiesPopup.classList.remove('active')
+					localStorage.setItem('cookiesAccepted', 'false')
+				})
+
+			cookiesPopup
+				.querySelector('.settings-btn')
+				.addEventListener('click', () => {
+					alert('Cookie settings will be available soon!')
+				})
 
 			window.addEventListener('DOMContentLoaded', getRandomColor)
 		</script>

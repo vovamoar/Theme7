@@ -174,7 +174,7 @@ const observerSections = new IntersectionObserver(
 	}
 )
 
-// Observe all sections
+// Наблюдаем за всеми секциями
 sections.forEach(section => {
 	observerSections.observe(section)
 })
@@ -270,73 +270,6 @@ sr.reveal('.contact-form', {
 	// viewFactor: 0.2,
 })
 
-// Create popups dynamically
-document.addEventListener('DOMContentLoaded', () => {
-	// Create overlay
-	// const overlay = document.createElement('div')
-	// overlay.className = 'overlay'
-	// document.body.appendChild(overlay)
-
-	// Create cookies popup
-	const cookiesPopup = document.createElement('div')
-	cookiesPopup.className = 'cookies-popup'
-	cookiesPopup.id = 'cookiesPopup'
-	cookiesPopup.innerHTML = `
-		<div class="cookies-content">
-			<i class="bx bx-cookie"></i>
-			<div class="cookies-text">
-				<h3>Cookies Consent</h3>
-				<p>We use cookies to enhance your experience on our website. They help us analyze website usage and improve its functionality.</p>
-			</div>
-			<div class="cookies-buttons">
-				<button class="accept-btn">Accept All</button>
-				<button class="decline-btn">Decline All</button>
-				<button class="settings-btn">Settings</button>
-			</div>
-		</div>
-	`
-	document.body.appendChild(cookiesPopup)
-
-	// Function to show overlay
-	const showOverlay = () => {
-		overlay.classList.add('active')
-		document.body.style.overflow = 'hidden' // Prevent scrolling
-	}
-
-	// Function to hide overlay
-	const hideOverlay = () => {
-		overlay.classList.remove('active')
-		document.body.style.overflow = '' // Enable scrolling
-	}
-
-	// Show cookies popup if consent not given
-	if (!localStorage.getItem('cookiesAccepted')) {
-		setTimeout(() => {
-			cookiesPopup.classList.add('active')
-			showOverlay()
-		}, 3000)
-	}
-
-	// Cookies popup buttons
-	cookiesPopup.querySelector('.accept-btn').addEventListener('click', () => {
-		cookiesPopup.classList.remove('active')
-		hideOverlay()
-		localStorage.setItem('cookiesAccepted', 'true')
-	})
-
-	cookiesPopup.querySelector('.decline-btn').addEventListener('click', () => {
-		cookiesPopup.classList.remove('active')
-		hideOverlay()
-		localStorage.setItem('cookiesAccepted', 'false')
-	})
-
-	cookiesPopup.querySelector('.settings-btn').addEventListener('click', () => {
-		// Here you can add functionality to show detailed cookie settings
-		// For now, we'll just show an alert
-		alert('Cookie settings will be available soon!')
-	})
-})
-
 // Typing Animation
 const typingText = document.querySelector('.typing-text')
 const phrases = [
@@ -356,19 +289,19 @@ function type() {
 	const speed = isDeleting ? 40 : 80
 
 	if (!isDeleting && charIndex < currentPhrase.length) {
-		// Печатаем символ
+		// Print symbol
 		typingText.textContent = currentPhrase.substring(0, charIndex + 1)
 		charIndex++
 	} else if (isDeleting && charIndex > 0) {
-		// Удаляем символ
+		// Delete symbol
 		typingText.textContent = currentPhrase.substring(0, charIndex - 1)
 		charIndex--
 	} else if (charIndex === 0 && isDeleting) {
-		// Переходим к следующей фразе
+		// Go to the next phrase
 		isDeleting = false
 		phraseIndex = (phraseIndex + 1) % phrases.length
 	} else if (charIndex === currentPhrase.length && !isDeleting && !isWaiting) {
-		// Ждем перед удалением
+		// Wait before deleting
 		isWaiting = true
 		setTimeout(() => {
 			isDeleting = true
@@ -378,7 +311,7 @@ function type() {
 		return
 	}
 
-	// Продолжаем анимацию с динамической скоростью
+	// Continue animation with dynamic speed
 	const nextSpeed = isDeleting
 		? speed
 		: charIndex === currentPhrase.length
@@ -388,7 +321,7 @@ function type() {
 	setTimeout(type, nextSpeed)
 }
 
-// Запускаем анимацию когда документ загружен
+// Start animation when document is loaded
 document.addEventListener('DOMContentLoaded', () => {
 	typingText.textContent = ''
 	setTimeout(type, 1000)
