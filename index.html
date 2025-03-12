@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Theme7 Food Website</title>
+		<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="style.css" />
+		<title>Theme7 Food Website</title>
 		<!-- Box icon link -->
 		<link
 			rel="stylesheet"
@@ -1177,10 +1178,10 @@
 		<script src="main.js"></script>
 
 		<script>
-			function randomColor() {
+			function getRandomColor() {
 				const colors = [
 					'#4e69ff',
-					'#a47864',
+					'#b3816b',
 					'rgb(233, 0, 233)',
 					'rgb(0, 233, 0)',
 					'rgb(238, 238, 0)',
@@ -1191,11 +1192,8 @@
 					'#00cccc',
 					'#cc00cc',
 				]
-
-				// Get the previously used color from localStorage
 				const previousColor = localStorage.getItem('previousColor')
 
-				// Choose a random color that's different from the previous one
 				let selectedColor
 				let randomIndex
 
@@ -1204,21 +1202,16 @@
 					selectedColor = colors[randomIndex]
 				} while (selectedColor === previousColor && colors.length > 1)
 
-				// Save the current color for next time
 				localStorage.setItem('previousColor', selectedColor)
 
-				// Function to convert any color format to RGBA
 				function convertToRGBA(color, alpha) {
-					// Create a temporary element to use the browser's color parsing
 					const tempElement = document.createElement('div')
 					tempElement.style.color = color
 					document.body.appendChild(tempElement)
 
-					// Get computed style (in rgb format)
 					const computedColor = window.getComputedStyle(tempElement).color
 					document.body.removeChild(tempElement)
 
-					// Extract RGB values
 					const rgbMatch = computedColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/)
 					if (rgbMatch) {
 						const r = rgbMatch[1]
@@ -1227,16 +1220,14 @@
 						return `rgba(${r}, ${g}, ${b}, ${alpha})`
 					}
 
-					return color // Fallback to original color if conversion fails
+					return color
 				}
 
-				// Set the main color variable
 				document.documentElement.style.setProperty(
 					'--main-color',
 					selectedColor
 				)
 
-				// Set transparent versions of the main color for shadows
 				document.documentElement.style.setProperty(
 					'--main-color-transparent',
 					convertToRGBA(selectedColor, 0.8)
@@ -1260,7 +1251,7 @@
 				console.log('Applied random color: ' + selectedColor)
 			}
 
-			window.addEventListener('DOMContentLoaded', randomColor)
+			window.addEventListener('DOMContentLoaded', getRandomColor)
 		</script>
 	</body>
 </html>
