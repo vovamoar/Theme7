@@ -1586,8 +1586,8 @@ textarea.form-input {
 	bottom: -100%;
 	left: 50%;
 	transform: translateX(-50%);
-	background: var(--bg-color);
-	max-width: 550px;
+	background: var(--other-color);
+	max-width: 750px;
 	width: 100%;
 	padding: 25px;
 	border-radius: 15px;

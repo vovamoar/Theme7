@@ -273,9 +273,9 @@ sr.reveal('.contact-form', {
 // Create popups dynamically
 document.addEventListener('DOMContentLoaded', () => {
 	// Create overlay
-	const overlay = document.createElement('div')
-	overlay.className = 'overlay'
-	document.body.appendChild(overlay)
+	// const overlay = document.createElement('div')
+	// overlay.className = 'overlay'
+	// document.body.appendChild(overlay)
 
 	// Create cookies popup
 	const cookiesPopup = document.createElement('div')
