@@ -6,10 +6,8 @@ let navlist = document.querySelector('.navlist')
 const navListItems = document.querySelectorAll('.navlist_item')
 
 window.addEventListener('scroll', () => {
-	// Обработка sticky header
 	header.classList.toggle('sticky', window.scrollY > 80)
 
-	// Обработка кнопки прокрутки вверх
 	if (window.scrollY > 300) {
 		scrollTopBtn.classList.add('show')
 	} else {
@@ -151,14 +149,23 @@ sr.reveal('.benefit-card', {
 	viewFactor: 0.5,
 })
 
-// Process section animation
-const processItems = document.querySelectorAll('.process-item')
+// Activate menu items on scroll
+const sections = document.querySelectorAll('section[id]')
+const navLinks = document.querySelectorAll('.navlist_link')
 
-const observerProcess = new IntersectionObserver(
+const observerSections = new IntersectionObserver(
 	entries => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				entry.target.classList.add('visible')
+				const id = entry.target.getAttribute('id')
+
+				navLinks.forEach(link => {
+					link.classList.remove('active')
+				})
+
+				document
+					.querySelector(`.navlist_link[href="#${id}"]`)
+					.classList.add('active')
 			}
 		})
 	},
@@ -167,8 +174,9 @@ const observerProcess = new IntersectionObserver(
 	}
 )
 
-processItems.forEach(item => {
-	observerProcess.observe(item)
+// Observe all sections
+sections.forEach(section => {
+	observerSections.observe(section)
 })
 
 // Counter animation
@@ -197,7 +205,6 @@ const startCounting = entries => {
 			}
 
 			updateCounter()
-			// Прекращаем наблюдение после начала анимации
 			counterObserver.unobserve(entry.target)
 		}
 	})
