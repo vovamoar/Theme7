@@ -450,10 +450,11 @@ section {
 	height: auto;
 }
 
-.info-box h3 {
+.info-box span {
 	font-size: 21px;
 	font-weight: bold;
 	margin: 16px 0;
+	display: block;
 }
 
 .info-box a {
@@ -726,17 +727,19 @@ section {
 	border-radius: 3rem;
 }
 
-.marquee__content__text h4 {
+.marquee__content__text strong {
+	display: block;
 	margin: 5px 0;
 	font-size: 18px;
 }
 
-.marquee__content__text h5 {
+.marquee__content__text span {
 	color: var(--second-color);
 	font-size: 14px;
 	font-weight: 500;
 	letter-spacing: 1px;
 	margin-bottom: 10px;
+	display: block;
 }
 
 .rating {
@@ -1363,21 +1366,25 @@ textarea.form-input {
 	transform: scale(1.1);
 }
 
-.card-front h3 {
+.card-front span {
 	font-size: 1.8rem;
 	margin-bottom: 1rem;
 	color: var(--text-color);
+	font-weight: bold;
+	display: block;
 }
 
-.card-back h3 {
+.card-back span {
 	font-size: 1.8rem;
 	color: var(--main-color);
 	margin-bottom: 2rem;
 	position: relative;
 	padding-bottom: 1rem;
+	font-weight: bold;
+	display: block;
 }
 
-.card-back h3::after {
+.card-back span::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -1475,8 +1482,8 @@ textarea.form-input {
 	}
 }
 
-@media screen and (max-width: 420px) {
-	.card-back h3 {
+@media screen and (max-width: 520px) {
+	.card-back span {
 		display: none;
 	}
 }
