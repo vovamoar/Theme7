@@ -739,6 +739,10 @@ section {
 	margin-bottom: 10px;
 }
 
+.rating {
+	display: flex;
+}
+
 .rating i {
 	color: var(--main-color);
 	font-size: 18px;
