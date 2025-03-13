@@ -343,7 +343,8 @@
 				<div class="row" role="article" aria-labelledby="product-8-heading">
 					<img src="images/p4.png" alt="Natural raw forest products" />
 					<h3 id="product-8-heading">Raw Forest Products</h3>
-					<p>Unprocessed products from the forest. Rich in nutrients and flavor!
+					<p>
+						Unprocessed products from the forest. Rich in nutrients and flavor!
 						Unprocessed products from the forest. Rich in nutrients and flavor!
 						Unprocessed products from the forest. Rich in nutrients and flavor!
 					</p>
@@ -420,21 +421,21 @@
 		</section>
 
 		<!-- Benefits Section -->
-		<section class="benefits" id="benefits">
+		<section class="benefits" id="benefits" aria-labelledby="benefits-heading">
 			<div class="middle-text">
 				<h4>Benefits</h4>
-				<h2>Why Choose Our Food?</h2>
+				<h2 id="benefits-heading">Why Choose Our Food?</h2>
 			</div>
 
 			<div class="benefits-content">
-				<div class="benefit-card">
+				<div class="benefit-card" tabindex="0" aria-label="Health Benefits card - flip to see details">
 					<div class="card-inner">
-						<div class="card-front">
-							<i class="bx bx-heart"></i>
-							<h3>Health Benefits</h3>
+						<div class="card-front" aria-hidden="false">
+							<i class="bx bx-heart" aria-hidden="true"></i>
+							<h3 id="health-heading">Health Benefits</h3>
 						</div>
-						<div class="card-back">
-							<h3>Natural Healing</h3>
+						<div class="card-back" aria-hidden="true" aria-labelledby="health-back-heading">
+							<h3 id="health-back-heading">Natural Healing</h3>
 							<ul>
 								<li>Boosts immunity</li>
 								<li>Natural energy source</li>
@@ -445,14 +446,14 @@
 					</div>
 				</div>
 
-				<div class="benefit-card">
+				<div class="benefit-card" tabindex="0" aria-label="100% Natural card - flip to see details">
 					<div class="card-inner">
 						<div class="card-front">
-							<i class="bx bx-leaf"></i>
-							<h3>100% Natural</h3>
+							<i class="bx bx-leaf" aria-hidden="true"></i>
+							<h3 id="natural-heading">100% Natural</h3>
 						</div>
 						<div class="card-back">
-							<h3>Pure & Natural</h3>
+							<h3 id="natural-back-heading">Pure & Natural</h3>
 							<ul>
 								<li>No additives</li>
 								<li>Raw food</li>
@@ -463,14 +464,14 @@
 					</div>
 				</div>
 
-				<div class="benefit-card">
+				<div class="benefit-card" tabindex="0" aria-label="Culinary Uses card - flip to see details">
 					<div class="card-inner">
 						<div class="card-front">
-							<i class="bx bx-cookie"></i>
-							<h3>Culinary Uses</h3>
+							<i class="bx bx-cookie" aria-hidden="true"></i>
+							<h3 id="culinary-heading">Culinary Uses</h3>
 						</div>
 						<div class="card-back">
-							<h3>Cooking Tips</h3>
+							<h3 id="culinary-back-heading">Cooking Tips</h3>
 							<ul>
 								<li>Natural sweetener</li>
 								<li>Perfect for baking</li>
