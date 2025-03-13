@@ -21,7 +21,7 @@
 	--text-color: #fff;
 	--other-color: #212121;
 	--second-color: #9e9e9e;
-	--red-color: #cd0000;
+	--red-color: #ff2626;
 	--bg-color: #111111;
 	--big-font: 4.5rem;
 	--h2-font: 2.6rem;
@@ -505,7 +505,7 @@ section {
 	text-align: center;
 }
 
-.middle-text h4 {
+.middle-text span {
 	font-size: 26px;
 	font-weight: 700;
 	margin-bottom: 10px;
@@ -582,7 +582,7 @@ section {
 	margin-top: auto;
 }
 
-.in-text .price h6 {
+.in-text .price span {
 	font-size: 17px;
 	color: var(--main-color);
 	font-weight: 600;
@@ -770,6 +770,13 @@ section {
 /* Contact Section */
 .contact {
 	padding: 70px 13% 60px;
+}
+
+.contact .section-title span {
+	font-size: 26px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	color: var(--main-color);
 }
 
 .contact-sections-wrapper {
@@ -1918,6 +1925,7 @@ textarea.form-input {
 	opacity: 0;
 	visibility: hidden;
 	transition: scale 0.2s ease-in-out;
+	z-index: 200;
 }
 
 .scroll:hover {

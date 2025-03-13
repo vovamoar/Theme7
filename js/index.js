@@ -66,7 +66,7 @@ const sr = ScrollReveal({
 sr.reveal('.home-text', { delay: 100, origin: 'left', distance: '30px' })
 sr.reveal('.home-img', { delay: 150, origin: 'right', distance: '30px' })
 
-sr.reveal('.container-box, .box', {
+sr.reveal('.info-box, .box', {
 	delay: 50,
 	scale: 0.7,
 	opacity: 0,
