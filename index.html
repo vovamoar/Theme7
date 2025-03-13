@@ -135,19 +135,21 @@
 		</section>
 
 		<!-- About us -->
-		<section id="about" class="about">
+		<section id="about" class="about" aria-labelledby="about-heading">
 			<div class="middle-text">
 				<h4>About Us</h4>
-				<h2>Our Delicious Journey</h2>
+				<h2 id="about-heading">Our Delicious Journey</h2>
 			</div>
 
 			<div class="about-content">
-				<div class="about-img">
+				<div class="about-img" aria-hidden="true">
 					<svg
 						viewBox="0 0 200 200"
 						xmlns="http://www.w3.org/2000/svg"
 						width="200"
 						height="200"
+						role="img"
+						aria-label="Decorative food image"
 					>
 						<defs>
 							<clipPath id="aboutShape">
@@ -163,6 +165,7 @@
 							xlink:href="images/home.webp"
 							clip-path="url(#aboutShape)"
 							transform="scale(-1,1) translate(-200,0)"
+							alt="Organic food product"
 						/>
 					</svg>
 				</div>
@@ -180,8 +183,8 @@
 						aspernatur molestiae similique accusantium impedit expedita, soluta
 						explicabo illum suscipit.
 					</p>
-					<a href="#" class="btn"
-						>Explore Story<i class="bx bx-right-arrow-alt"></i
+					<a href="#shop" class="btn" role="button" aria-label="Learn more about our story"
+						>Explore Story<i class="bx bx-right-arrow-alt" aria-hidden="true"></i
 					></a>
 				</div>
 			</div>
