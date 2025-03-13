@@ -739,7 +739,7 @@ section {
 	margin-bottom: 10px;
 }
 
-.rating i {
+.rating span i {
 	color: var(--main-color);
 	font-size: 18px;
 	margin-right: 5px;
