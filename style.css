@@ -1245,8 +1245,22 @@ textarea.form-input {
 	max-height: 0;
 	overflow: hidden;
 	transition: all 0.3s ease;
-	overflow-y: scroll;
+	overflow-y: auto;
 	scrollbar-width: thin;
+	scrollbar-color: var(--main-color) transparent;
+}
+
+.faq-body::-webkit-scrollbar {
+	width: 4px;
+}
+
+.faq-body::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.faq-body::-webkit-scrollbar-thumb {
+	background-color: var(--main-color);
+	border-radius: 10px;
 }
 
 .faq-item.active .faq-body {
