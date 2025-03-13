@@ -24,52 +24,54 @@
 	</head>
 	<body>
 		<!-- Header section -->
-		<header>
-			<a href="#" class="logo"><i class="bx bxs-home"></i>Food</a>
-			<ul class="navlist">
-				<li class="navlist_item">
-					<a class="navlist_link active" href="#home">Home</a>
-				</li>
-				<li class="navlist_item">
-					<a class="navlist_link" href="#about">About Us</a>
-				</li>
-				<li class="navlist_item">
-					<a class="navlist_link" href="#shop">Our Shop</a>
-				</li>
-				<li class="navlist_item">
-					<a class="navlist_link" href="#special">Special Offers</a>
-				</li>
-				<li class="navlist_item">
-					<a class="navlist_link" href="#benefits">Benefits</a>
-				</li>
-				<li class="navlist_item">
-					<a class="navlist_link" href="#counter">Our Impact</a>
-				</li>
-				<li class="navlist_item">
-					<a class="navlist_link" href="#review">Our Customer</a>
-				</li>
-				<li class="navlist_item">
-					<a class="navlist_link" href="#faq">FAQ</a>
-				</li>
-				<li class="navlist_item">
-					<a class="navlist_link" href="#contact">Contact Us</a>
-				</li>
-			</ul>
+		<header role="banner">
+			<a href="#" class="logo" aria-label="Food homepage"><i class="bx bxs-home" aria-hidden="true"></i>Food</a>
+			<nav aria-label="Main navigation">
+				<ul class="navlist" role="menubar">
+					<li class="navlist_item" role="none">
+						<a class="navlist_link active" href="#home" role="menuitem" aria-current="page">Home</a>
+					</li>
+					<li class="navlist_item" role="none">
+						<a class="navlist_link" href="#about" role="menuitem">About Us</a>
+					</li>
+					<li class="navlist_item" role="none">
+						<a class="navlist_link" href="#shop" role="menuitem">Our Shop</a>
+					</li>
+					<li class="navlist_item" role="none">
+						<a class="navlist_link" href="#special" role="menuitem">Special Offers</a>
+					</li>
+					<li class="navlist_item" role="none">
+						<a class="navlist_link" href="#benefits" role="menuitem">Benefits</a>
+					</li>
+					<li class="navlist_item" role="none">
+						<a class="navlist_link" href="#counter" role="menuitem">Our Impact</a>
+					</li>
+					<li class="navlist_item" role="none">
+						<a class="navlist_link" href="#review" role="menuitem">Our Customer</a>
+					</li>
+					<li class="navlist_item" role="none">
+						<a class="navlist_link" href="#faq" role="menuitem">FAQ</a>
+					</li>
+					<li class="navlist_item" role="none">
+						<a class="navlist_link" href="#contact" role="menuitem">Contact Us</a>
+					</li>
+				</ul>
+			</nav>
 
-			<div class="nav-icons">
-				<a href="#"><i class="bx bx-search"></i></a>
-				<a href="#"><i class="bx bxs-cart-alt"></i></a>
-				<div class="bx bx-menu" id="menu-icon"></div>
+			<div class="nav-icons" aria-label="Additional navigation">
+				<a href="#" aria-label="Search"><i class="bx bx-search" aria-hidden="true"></i></a>
+				<a href="#" aria-label="Shopping cart"><i class="bx bxs-cart-alt" aria-hidden="true"></i></a>
+				<button class="bx bx-menu" id="menu-icon" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navlist"></button>
 			</div>
 		</header>
 
 		<!-- Home -->
-		<section class="home" id="home">
+		<section class="home" id="home" aria-label="Home section">
 			<div class="home-text">
 				<h1>
 					<div class="static-text">Welcome to</div>
-					<div class="typing-text"></div>
-					<div class="typing-phrases" style="display: none;">
+					<div class="typing-text" aria-live="polite" role="status"></div>
+					<div class="typing-phrases" style="display: none;" aria-hidden="true">
 						<span data-phrase="Premium Food&#10;Collection"></span>
 						<span data-phrase="Natural Delicious&#10;Treasure"></span>
 						<span data-phrase="Pure Organic&#10;Sweetness"></span>
@@ -77,18 +79,20 @@
 					</div>
 				</h1>
 				<p class="subtitle">Taste the difference in every bite</p>
-				<a href="#" class="btn"
-					>Explore Menu<i class="bx bx-right-arrow-alt"></i
+				<a href="#shop" class="btn" role="button" aria-label="Explore our menu"
+					>Explore Menu<i class="bx bx-right-arrow-alt" aria-hidden="true"></i
 				></a>
-				<a href="#" class="btn2">Order Now</a>
+				<a href="#shop" class="btn2" role="button" aria-label="Order now">Order Now</a>
 			</div>
 
-			<div class="home-img">
+			<div class="home-img" aria-hidden="true">
 				<svg
 					viewBox="0 0 200 200"
 					xmlns="http://www.w3.org/2000/svg"
 					width="200"
 					height="200"
+					role="img"
+					aria-label="Decorative food image"
 				>
 					<defs>
 						<clipPath id="shape">
@@ -103,6 +107,7 @@
 						height="200"
 						xlink:href="images/home.webp"
 						clip-path="url(#shape)"
+						alt="Premium organic food product"
 					/>
 				</svg>
 			</div>
@@ -1135,7 +1140,7 @@
 							</div>
 
 							<div class="main-d">
-								<a href="#"><i class="bx bxl-youtube"></i>Coding abdullah</a>
+								<a href="#"><i class="bx bxs-envelope"></i>info@foodwebsite.com</a>
 							</div>
 
 							<div class="main-d">
