@@ -155,6 +155,7 @@ section {
 	padding: 0 0 0 100px;
 	gap: 50px;
 	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .home-text {
@@ -238,6 +239,8 @@ section {
 	min-height: 140px;
 	white-space: pre-line;
 	position: relative;
+	overflow: hidden;
+	height: auto;
 }
 
 .typing-text::after {
@@ -285,7 +288,8 @@ section {
 		font-size: 2.2rem;
 	}
 
-	.typing-text {
+	.typing-text,
+	.typing-text-second {
 		font-size: 2.8rem;
 		min-height: 120px;
 	}
@@ -298,16 +302,71 @@ section {
 @media (max-width: 480px) {
 	.home-text h1 {
 		font-size: 3rem;
-		height: 140px;
+		height: auto;
+		min-height: 200px;
+		overflow: hidden;
 	}
 
 	.static-text {
 		font-size: 2rem;
 	}
 
-	.typing-text {
+	.typing-text,
+	.typing-text-second {
 		font-size: 2.4rem;
 		min-height: 100px;
+	}
+}
+
+@media (max-width: 768px) {
+	.home {
+		padding-left: 50px;
+	}
+
+	.home-text h1 {
+		font-size: 3.5rem;
+		height: 240px;
+	}
+
+	.static-text {
+		font-size: 2.2rem;
+		height: 40px;
+	}
+
+	.typing-container {
+		height: 160px;
+	}
+
+	.typing-text,
+	.typing-text-second {
+		font-size: 2.8rem;
+		height: 70px;
+	}
+}
+
+@media (max-width: 480px) {
+	.home-text h1 {
+		font-size: 3rem;
+		height: auto;
+		min-height: 200px;
+		overflow: hidden;
+	}
+
+	.static-text {
+		font-size: 2rem;
+		height: 35px;
+	}
+
+	.typing-container {
+		height: 140px;
+	}
+
+	.typing-text,
+	.typing-text-second {
+		font-size: 2.4rem;
+		height: auto;
+		min-height: 60px;
+		overflow: hidden;
 	}
 }
 
@@ -1834,7 +1893,7 @@ textarea.form-input {
 	position: fixed;
 	bottom: 2.2rem;
 	border-top: 2rem;
-	right: 3.2rem;
+	right: 2rem;
 	opacity: 0;
 	visibility: hidden;
 	transition: scale 0.2s ease-in-out;
@@ -2219,7 +2278,9 @@ textarea.form-input {
 @media (max-width: 480px) {
 	.home-text h1 {
 		font-size: 3rem;
-		height: 200px;
+		height: auto;
+		min-height: 200px;
+		overflow: hidden;
 	}
 
 	.static-text {
@@ -2234,7 +2295,9 @@ textarea.form-input {
 	.typing-text,
 	.typing-text-second {
 		font-size: 2.4rem;
-		height: 60px;
+		height: auto;
+		min-height: 60px;
+		overflow: hidden;
 	}
 
 	.app-download {
