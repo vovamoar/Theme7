@@ -526,11 +526,14 @@ section {
 
 .row {
 	position: relative;
-	padding: 10px 35px 40px;
+	padding: 10px 35px 30px;
 	background: var(--other-color);
 	border-radius: 3rem;
 	transition: box-shadow 0.5s ease, border 0.5s ease;
 	border: 2px solid transparent;
+	display: flex;
+	flex-direction: column;
+	height: 450px;
 }
 
 .row:hover {
@@ -540,14 +543,22 @@ section {
 
 .row img {
 	width: 100%;
-	height: auto;
+	height: 180px;
+	object-fit: contain;
 	transition: transform 0.5s ease;
+	margin-bottom: 10px;
+}
+
+.row:hover img {
+	transform: scale(1.1);
 }
 
 .row h3 {
 	font-size: 18px;
 	font-weight: 700;
 	margin-bottom: 5px;
+	height: 25px;
+	overflow: hidden;
 }
 
 .row p {
@@ -555,12 +566,20 @@ section {
 	font-size: var(--p-font);
 	line-height: 30px;
 	margin-bottom: 1.1rem;
+	height: 126px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	line-clamp: 4;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
 }
 
 .in-text {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-top: auto;
 }
 
 .in-text .price h6 {
