@@ -257,7 +257,7 @@ contactForm.addEventListener('submit', e => {
 	// Hide status after 3 seconds
 	setTimeout(() => {
 		formStatus.style.display = 'none'
-	}, 3000)
+	}, 2000)
 })
 
 // Add scroll reveal for contact form
@@ -272,12 +272,12 @@ sr.reveal('.contact-form', {
 
 // Typing Animation
 const typingText = document.querySelector('.typing-text')
-const phrases = [
-	'Premium Honey\nCollection',
-	'Natural Golden\nTreasure',
-	'Pure Organic\nSweetness',
-	'Finest Quality\nSelection',
-]
+const phraseElements = document.querySelectorAll(
+	'.typing-phrases span[data-phrase]'
+)
+const phrases = Array.from(phraseElements).map(el =>
+	el.getAttribute('data-phrase')
+)
 
 let phraseIndex = 0
 let charIndex = 0
