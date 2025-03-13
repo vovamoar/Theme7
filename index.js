@@ -321,8 +321,112 @@ function type() {
 	setTimeout(type, nextSpeed)
 }
 
-// Start animation when document is loaded
+// Random Color Generator
+function getRandomColor() {
+	const colors = [
+		'#4e69ff',
+		'#b3816b',
+		'rgb(233, 0, 233)',
+		'rgb(0, 233, 0)',
+		'rgb(238, 238, 0)',
+		'rgb(255, 47, 47)',
+		'#ff69b4',
+		'#33cc33',
+		'#ffd700',
+		'#00cccc',
+		'#cc00cc',
+	]
+	const previousColor = localStorage.getItem('previousColor')
+
+	let selectedColor
+	let randomIndex
+
+	do {
+		randomIndex = Math.floor(Math.random() * colors.length)
+		selectedColor = colors[randomIndex]
+	} while (selectedColor === previousColor && colors.length > 1)
+
+	localStorage.setItem('previousColor', selectedColor)
+
+	function convertToRGBA(color, alpha) {
+		const tempElement = document.createElement('div')
+		tempElement.style.color = color
+		document.body.appendChild(tempElement)
+
+		const computedColor = window.getComputedStyle(tempElement).color
+		document.body.removeChild(tempElement)
+
+		const rgbMatch = computedColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/)
+		if (rgbMatch) {
+			const r = rgbMatch[1]
+			const g = rgbMatch[2]
+			const b = rgbMatch[3]
+			return `rgba(${r}, ${g}, ${b}, ${alpha})`
+		}
+
+		return color
+	}
+
+	document.documentElement.style.setProperty('--main-color', selectedColor)
+
+	document.documentElement.style.setProperty(
+		'--main-color-transparent',
+		convertToRGBA(selectedColor, 0.8)
+	)
+
+	document.documentElement.style.setProperty(
+		'--main-color-transparent-light',
+		convertToRGBA(selectedColor, 0.6)
+	)
+
+	document.documentElement.style.setProperty(
+		'--main-color-transparent-medium',
+		convertToRGBA(selectedColor, 0.4)
+	)
+
+	document.documentElement.style.setProperty(
+		'--main-color-transparent-dark',
+		convertToRGBA(selectedColor, 0.2)
+	)
+
+	console.log('Applied random color: ' + selectedColor)
+}
+
+// Cookies popup functionality
+function initCookiesPopup() {
+	const cookiesPopup = document.getElementById('cookiesPopup')
+
+	if (!localStorage.getItem('cookiesAccepted')) {
+		console.log('Cookies popup not shown')
+		setTimeout(() => {
+			cookiesPopup.classList.add('active')
+		}, 3000)
+	}
+
+	cookiesPopup.querySelector('.accept-btn').addEventListener('click', () => {
+		cookiesPopup.classList.remove('active')
+		localStorage.setItem('cookiesAccepted', 'true')
+	})
+
+	cookiesPopup.querySelector('.decline-btn').addEventListener('click', () => {
+		cookiesPopup.classList.remove('active')
+		localStorage.setItem('cookiesAccepted', 'false')
+	})
+
+	cookiesPopup.querySelector('.settings-btn').addEventListener('click', () => {
+		alert('Cookie settings will be available soon!')
+	})
+}
+
+// Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+	// Initialize typing animation
 	typingText.textContent = ''
 	setTimeout(type, 1000)
+
+	// Apply random color
+	getRandomColor()
+
+	// Initialize cookies popup
+	initCookiesPopup()
 })
