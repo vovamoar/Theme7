@@ -114,14 +114,6 @@ sr.reveal('.special-box2', {
 	viewFactor: 0.5,
 })
 
-sr.reveal('.review-content, .contact', {
-	delay: 100,
-	origin: 'bottom',
-	distance: '30px',
-	opacity: 0,
-	viewFactor: 0.5,
-})
-
 sr.reveal('.c-one', {
 	delay: 200,
 	rotate: { x: 0, y: 180, z: 0 },
