@@ -174,7 +174,6 @@ const observerSections = new IntersectionObserver(
 	}
 )
 
-// Наблюдаем за всеми секциями
 sections.forEach(section => {
 	observerSections.observe(section)
 })
@@ -236,14 +235,12 @@ contactForm.addEventListener('submit', e => {
 	// Simulate form submission
 	formStatus.style.display = 'block'
 
-	// Validate email
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 	if (!emailRegex.test(formData.email)) {
 		formStatus.className = 'form-status error'
 		return
 	}
 
-	// Validate phone (simple validation)
 	const phoneRegex = /^\+?[\d\s-]{10,}$/
 	if (!phoneRegex.test(formData.phone)) {
 		formStatus.className = 'form-status error'
@@ -254,13 +251,11 @@ contactForm.addEventListener('submit', e => {
 	formStatus.className = 'form-status success'
 	contactForm.reset()
 
-	// Hide status after 3 seconds
 	setTimeout(() => {
 		formStatus.style.display = 'none'
-	}, 2000)
+	}, 3000)
 })
 
-// Add scroll reveal for contact form
 sr.reveal('.contact-form', {
 	delay: 100,
 	origin: 'bottom',
@@ -324,18 +319,28 @@ function type() {
 // Random Color Generator
 function getRandomColor() {
 	const colors = [
-		'#4e69ff',
-		'#b3816b',
-		'rgb(233, 0, 233)',
-		'rgb(0, 233, 0)',
-		'rgb(238, 238, 0)',
-		'rgb(255, 47, 47)',
-		'#ff69b4',
-		'#33cc33',
-		'#ffd700',
-		'#00cccc',
-		'#cc00cc',
-	]
+		'#00FFFF',
+		'#FF10F0',
+		'#14FF00',
+		'#FF1100',
+		'#F6FF00',
+		'#FF5100',
+		'#FF00CC',
+		'#47FF00',
+		'#00F0FF',
+		'#B700FF',
+		'#FF7700',
+		'#00FFAA',
+		'#FFAA00',
+		'#D600FF',
+		'#DDFF00',
+		'#FF40FF',
+		'#00FFDD',
+		'#FF2277',
+		'#77FF00',
+		'#FF0055',
+	].filter((color, index, self) => self.indexOf(color) === index)
+
 	const previousColor = localStorage.getItem('previousColor')
 
 	let selectedColor
