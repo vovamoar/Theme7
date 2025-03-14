@@ -131,6 +131,9 @@ header.sticky {
 #menu-icon {
 	font-size: 31px;
 	color: var(--bg-color);
+	background: var(--main-color);
+	border: none;
+	outline: none;
 	cursor: pointer;
 	z-index: 10001;
 	display: none;
