@@ -66,14 +66,14 @@ const sr = ScrollReveal({
 sr.reveal('.home-text', { delay: 100, origin: 'left', distance: '30px' })
 sr.reveal('.home-img', { delay: 150, origin: 'right', distance: '30px' })
 
-sr.reveal('.info-box, .box', {
+sr.reveal('.info-box, .box, .footer-col', {
 	delay: 50,
 	scale: 0.7,
 	opacity: 0,
 	viewFactor: 0.4,
 })
 
-sr.reveal('.about-img', {
+sr.reveal('.about-img, .contact-form', {
 	delay: 300,
 	origin: 'left',
 	distance: '30px',
@@ -81,7 +81,7 @@ sr.reveal('.about-img', {
 	viewFactor: 0.4,
 })
 
-sr.reveal('.about-text', {
+sr.reveal('.about-text, .contact-content', {
 	delay: 350,
 	origin: 'right',
 	distance: '30px',
@@ -246,15 +246,6 @@ contactForm.addEventListener('submit', e => {
 	setTimeout(() => {
 		formStatus.style.display = 'none'
 	}, 3000)
-})
-
-sr.reveal('.contact-form', {
-	delay: 100,
-	origin: 'bottom',
-	distance: '60px',
-	opacity: 0,
-	scale: 0.9,
-	// viewFactor: 0.2,
 })
 
 // Typing Animation
