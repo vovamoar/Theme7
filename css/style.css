@@ -159,6 +159,7 @@ section {
 	gap: 50px;
 	overflow-x: hidden;
 	overflow-y: hidden;
+	height: 138vh;
 }
 
 .home-text {
@@ -170,6 +171,7 @@ section {
 	font-size: 4.8rem;
 	line-height: 1.2;
 	margin-bottom: 2rem;
+	height: 240px;
 }
 
 .home-text p {
@@ -282,62 +284,18 @@ section {
 }
 
 @media screen and (max-width: 768px) {
+	.home {
+		padding-left: 20px;
+	}
+
 	.home-text h1 {
 		margin-bottom: 2rem;
 		font-size: 3.5rem;
-		height: 160px;
+		height: 164px !important;
 	}
-	.static-text {
-		font-size: 2.2rem;
-	}
-
-	.typing-text,
-	.typing-text-second {
-		font-size: 2.8rem;
-		min-height: 120px;
-	}
-
-	.subtitle {
-		font-size: 1rem;
-	}
-}
-
-@media (max-width: 480px) {
-	.home-text h1 {
-		font-size: 3rem;
-		height: auto;
-		min-height: 200px;
-		overflow: hidden;
-	}
-
-	.static-text {
-		font-size: 2rem;
-	}
-
-	.typing-text,
-	.typing-text-second {
-		font-size: 2.4rem;
-		min-height: 100px;
-	}
-}
-
-@media (max-width: 768px) {
-	.home {
-		padding-left: 50px;
-	}
-
-	.home-text h1 {
-		font-size: 3.5rem;
-		height: 240px;
-	}
-
 	.static-text {
 		font-size: 2.2rem;
 		height: 40px;
-	}
-
-	.typing-container {
-		height: 160px;
 	}
 
 	.typing-text,
@@ -345,14 +303,22 @@ section {
 		font-size: 2.8rem;
 		height: 70px;
 	}
+
+	.subtitle {
+		font-size: 1rem;
+	}
+
+	.typing-container {
+		height: 160px;
+	}
 }
 
 @media (max-width: 480px) {
 	.home-text h1 {
 		font-size: 3rem;
 		height: auto;
-		min-height: 200px;
 		overflow: hidden;
+		height: 0;
 	}
 
 	.static-text {
@@ -436,7 +402,7 @@ section {
 
 @media screen and (max-width: 500px) {
 	.info {
-		padding: 30px 6% 0;
+		padding: 0 6% 0;
 	}
 }
 
@@ -2040,7 +2006,7 @@ textarea.form-input {
 	}
 
 	.home {
-		height: 85vh;
+		height: 111vh;
 	}
 }
 
@@ -2074,6 +2040,10 @@ textarea.form-input {
 	.navlist.open {
 		top: 100%;
 	}
+
+	.home-text {
+		padding-top: 60px;
+	}
 }
 
 @media (max-width: 1045px) {
@@ -2102,11 +2072,7 @@ textarea.form-input {
 @media (max-width: 860px) {
 	.home {
 		grid-template-columns: 1fr;
-		height: 118vh;
-	}
-
-	.home-text {
-		padding-top: 60px;
+		height: 120vh;
 	}
 
 	.home-img {
@@ -2121,6 +2087,16 @@ textarea.form-input {
 
 	.about-img {
 		text-align: center;
+	}
+
+	.home-text {
+		padding-top: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.home {
+		height: 100vh;
 	}
 }
 
@@ -2164,13 +2140,6 @@ textarea.form-input {
 	:root {
 		--big-font: 2.8rem;
 		--h2-font: 2rem;
-	}
-}
-
-@media (max-width: 440px) {
-	.home {
-		height: 110vh;
-		gap: 0.1rem;
 	}
 }
 
@@ -2360,11 +2329,16 @@ textarea.form-input {
 }
 
 @media (max-width: 480px) {
+	.home {
+		padding-left: 20px;
+	}
+
 	.home-text h1 {
 		font-size: 3rem;
 		height: auto;
 		min-height: 200px;
 		overflow: hidden;
+		margin-bottom: 0;
 	}
 
 	.static-text {
@@ -2391,5 +2365,12 @@ textarea.form-input {
 	.social {
 		align-items: center;
 		justify-content: center;
+	}
+}
+
+@media (max-width: 440px) {
+	.home {
+		height: 110vh;
+		gap: 0.1rem;
 	}
 }
