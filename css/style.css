@@ -434,6 +434,12 @@ section {
 	text-align: center;
 }
 
+@media screen and (max-width: 500px) {
+	.info {
+		padding: 30px 6% 0;
+	}
+}
+
 .info-box {
 	padding: 43px;
 	background: var(--other-color);
@@ -870,6 +876,13 @@ section {
 	gap: 2rem;
 }
 
+@media screen and (max-width: 1400px) {
+	.details {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+}
+
 .main-d {
 	margin-bottom: 1.5rem;
 }
@@ -1076,6 +1089,11 @@ textarea.form-input {
 		max-width: 100%;
 	}
 
+	.contact-form {
+		padding: 2rem;
+		width: 100%;
+	}
+
 	.section-title {
 		margin-bottom: 2rem;
 	}
@@ -1088,11 +1106,6 @@ textarea.form-input {
 @media (max-width: 768px) {
 	.contact {
 		padding: 0 5% 0;
-	}
-
-	.contact-form {
-		padding: 2rem;
-		width: 100%;
 	}
 
 	.app-download {
@@ -1126,12 +1139,26 @@ textarea.form-input {
 	}
 }
 
+@media screen and (max-width: 400px) {
+	.special-offers {
+		padding: 0 4% 60px;
+	}
+}
+
 .special-content {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
 	gap: 2rem;
 	align-items: center;
 	margin-top: 4rem;
+}
+
+@media (max-width: 400px) {
+	.special-content,
+	.shop-content,
+	.info {
+		grid-template-columns: none;
+	}
 }
 
 .special-box {
@@ -1225,6 +1252,12 @@ textarea.form-input {
 @media screen and (max-width: 1060px) {
 	.faq {
 		padding: 0 13% 60px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.faq {
+		padding: 0 4% 60px;
 	}
 }
 
@@ -1473,8 +1506,12 @@ textarea.form-input {
 }
 
 @media screen and (max-width: 768px) {
+	.card-back span {
+		display: none;
+	}
+
 	.benefits {
-		padding-top: 0;
+		padding: 0 16% 90px;
 	}
 
 	.benefits-content {
@@ -1487,8 +1524,8 @@ textarea.form-input {
 }
 
 @media screen and (max-width: 520px) {
-	.card-back span {
-		display: none;
+	.benefits {
+		padding: 0 4% 56px;
 	}
 }
 
@@ -1640,6 +1677,9 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
+	.footer {
+		margin-top: 0;
+	}
 	.footer-bottom {
 		flex-direction: column;
 		text-align: center;
