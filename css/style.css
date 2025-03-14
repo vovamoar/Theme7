@@ -2114,6 +2114,10 @@ textarea.form-input {
 	.details {
 		gap: 1.5rem;
 	}
+
+	.about-img {
+		margin-right: 0;
+	}
 }
 
 @media (max-width: 475px) {
