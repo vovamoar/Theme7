@@ -7,6 +7,10 @@
 
 	<title>Theme7 Food Website - Premium Organic Food</title>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
 	<meta name="description"
 		content="Premium organic food website offering high-quality, natural food products. Explore our collection of delicious, healthy options sourced from sustainable farming." />
 	<meta name="keywords" content="organic food, natural food, premium food, healthy eating, sustainable food" />
@@ -19,8 +23,17 @@
 
 	<link rel="canonical" href="https://yourwebsite.com/" />
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="preload" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" as="style"
+		onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	</noscript>
+
+	<link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet" href="css/style.css">
+	</noscript>
+
 </head>
 
 <body>
@@ -1198,8 +1211,8 @@
 
 	<a href="#" class="scroll"><i class="bx bx-up-arrow-alt"></i></a>
 
-	<script src="https://unpkg.com/scrollreveal"></script>
-	<script src="js/index.js"></script>
+	<script src="https://unpkg.com/scrollreveal" defer></script>
+	<script src="js/index.js" defer></script>
 </body>
 
 </html>
